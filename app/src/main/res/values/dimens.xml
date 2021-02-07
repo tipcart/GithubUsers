@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    region margin and padding-->
+    <dimen name="margin_horizontal">16dp</dimen>
+    <dimen name="margin_vertical">8dp</dimen>
+    <dimen name="item_padding_horizontal">8dp</dimen>
+    <dimen name="item_padding_vertical">4dp</dimen>
+    <!--    endregion-->
+
+    <!--    region cardview dimens-->
+    <dimen name="card_view_corner_radius">8dp</dimen>
+    <dimen name="card_view_elevation">8dp</dimen>
+    <!--    endregion-->
+
+    <!--    region custom views dimens-->
+    <dimen name="image_diameter">64dp</dimen>
+    <dimen name="progressbar_diameter">48dp</dimen>
+    <dimen name="toolbar_height">64dp</dimen>
+    <!--    endregion-->
+</resources>
