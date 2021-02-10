@@ -9,11 +9,12 @@ import kotlinx.coroutines.Dispatchers
 class GitHubViewModel(private val repository: Repository) : ViewModel() {
 
     fun getUsers() = liveData(Dispatchers.IO) {
-        emit(Resource.loading( null))
+        emit(Resource.loading(null))
         try {
+            repository.insertAllUser(repository.getUsers())
             emit(Resource.success(repository.getUsers()))
         } catch (exception: Exception) {
-            emit(Resource.error( null,  exception.message ?: "Error Occurred!"))
+            emit(Resource.error(null, exception.message ?: "Error Occurred!"))
         }
     }
 }

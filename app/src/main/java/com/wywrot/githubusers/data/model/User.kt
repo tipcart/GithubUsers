@@ -1,9 +1,13 @@
 package com.wywrot.githubusers.data.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "github_user_entity")
 data class User(
     val login: String,
+    @PrimaryKey
     val id: Int,
     @SerializedName("node_id")
     val nodeId: String,

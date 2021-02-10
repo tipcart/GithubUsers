@@ -24,5 +24,9 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.GitHubUsers" />
+        <activity
+            android:name=".DetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.GitHubUsers" />
     </application>
 </manifest>

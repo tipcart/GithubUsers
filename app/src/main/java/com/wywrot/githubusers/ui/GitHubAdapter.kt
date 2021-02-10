@@ -2,12 +2,14 @@ package com.wywrot.githubusers.ui
 
 import android.content.Intent
 import android.net.Uri
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.wywrot.githubusers.DetailsActivity
 import com.wywrot.githubusers.R
 import com.wywrot.githubusers.data.model.User
 import kotlinx.android.synthetic.main.github_user_item.view.*
@@ -27,11 +29,10 @@ class GitHubAdapter(private val users: ArrayList<User>) :
                     .placeholder(R.drawable.ic_baseline_account_circle_24)
                     .into(ivAvatar)
                 setOnClickListener {
-                    startActivity(
-                        itemView.context,
-                        Intent(Intent.ACTION_VIEW, Uri.parse(user.htmlUrl)),
-                        null
-                    )
+                    val intent = Intent(itemView.context, DetailsActivity::class.java)
+                    intent.putExtra("KEY_USER_NAME", user.login)
+                    intent.putExtra("KEY_URL", user.htmlUrl)
+                    startActivity(itemView.context, intent, null)
                 }
             }
         }

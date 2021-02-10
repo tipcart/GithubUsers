@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.wywrot.githubusers.data.GithubDatabase
 import com.wywrot.githubusers.data.api.GitHubApiHelper
 import com.wywrot.githubusers.data.api.RetrofitBuilder
 import com.wywrot.githubusers.data.model.User
@@ -32,7 +33,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupViewModel() {
         viewModel = ViewModelProviders.of(
-            this, GitHubViewModelFactory(GitHubApiHelper(RetrofitBuilder.apiService))
+            this,
+            GitHubViewModelFactory(
+                GitHubApiHelper(RetrofitBuilder.apiService),
+                GithubDatabase.getDatabase(this)
+            )
         ).get(GitHubViewModel::class.java)
     }
 
